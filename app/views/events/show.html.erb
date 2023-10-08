@@ -1,0 +1,13 @@
+    <h1><%= @event.title %></h1>
+    <p>Date: <%= @event.date.strftime("%B %d, %Y") %></p>
+    <p>Time: <%= @event.time %></p>
+    <p>Location: <%= @event.location %></p>
+    <p>Description: <%= @event.description %></p>
+
+    <% if user_signed_in? %>
+      <%= link_to "Book Now", book_event_path(@event), method: :post, class: "btn btn-primary" %>
+    <% else %>
+      <p>Please <%= link_to "log in", new_user_session_path %> to book this event.</p>
+    <% end %>
+
+    <%= link_to "Back to Events", events_path %>

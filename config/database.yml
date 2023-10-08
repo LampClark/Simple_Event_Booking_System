@@ -20,6 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: console
 
 development:
   <<: *default
@@ -79,8 +81,8 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: Simple_Event_Booking_System_Assignment_production
-  username: Simple_Event_Booking_System_Assignment
-  password: <%= ENV["SIMPLE_EVENT_BOOKING_SYSTEM_ASSIGNMENT_DATABASE_PASSWORD"] %>
+# production:
+#   <<: *default
+#   database: Simple_Event_Booking_System_Assignment_production
+#   username: Simple_Event_Booking_System_Assignment
+#   password: <%= ENV["SIMPLE_EVENT_BOOKING_SYSTEM_ASSIGNMENT_DATABASE_PASSWORD"] %>
